@@ -8,14 +8,9 @@
 
 // Switch on LED on and off each half second
 
-#if ARDUINO >= 100
 const int led_pin = LED_BUILTIN;	// 1.0 built in LED pin var
-#else
-const int led_pin = 13;			// default to pin 13
-#endif
 
-
-void flash()
+void flash(void)
 {
   static boolean output = HIGH;
   
@@ -23,7 +18,7 @@ void flash()
   output = !output;
 }
 
-void setup()
+void setup(void)
 {
   pinMode(led_pin, OUTPUT);
 
@@ -31,6 +26,6 @@ void setup()
   MsTimer2::start();
 }
 
-void loop()
+void loop(void)
 {
 }
